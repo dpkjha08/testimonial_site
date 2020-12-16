@@ -8,11 +8,21 @@ class Form extends CI_Controller {
 
 		parent::__construct();
         $this->load->model('form_model');
+        $this->load->library('session');
     }
 
 	public function index(){
+
+        if(isset($_SESSION['success'])){
+            $data['success'] = true;
+        }
+        else{
+            $data['success'] = false;
+        }
+
+        unset($_SESSION['success']);
         $this->load->helper('url');
-		$this->load->view('form_view');
+		$this->load->view('form_view',$data);
     }
     
     public function getData(){
@@ -24,10 +34,14 @@ class Form extends CI_Controller {
         $isInserted = $this->form_model->insertData($name,$email,$feedback);
 
         if($isInserted){
-            echo "HOgaya";
+            $_SESSION["success"] = true;
+            $this->load->helper('url'); 
+   
+            /*Redirect the user to some internal controller’s method*/ 
+            redirect('form');  
         }
         else{
-            echo "Nhi hua";
+            echo "Oops, problem occured!!!";
         }
 
     }

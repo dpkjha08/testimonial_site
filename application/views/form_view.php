@@ -14,86 +14,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <!-------Developer Scripts-------->
-    <!-- <script type="text/javascript" >
-        $(document).ready(function() {
-
-                let emailV = false;
-                let feedbackV = false;
-                let nameV = false;
-
-
-                $('#email').keyup(function(){
-                let email = $('#email').val();
-                let mail_format = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-                if(email.match(mail_format)){   
-                    $('.email-invalid').css('display','none');
-                    emailV = true;
-                    make(emailV,feedbackV,nameV);make(count);
-                }
-                else{
-                    $('.email-invalid').css('display','block');
-                    emailV = false;
-                    make(emailV,feedbackV,nameV);
-                }
-            });
-
-            $('#feedback').keyup(function(){
-                let feedback = $('#feedback').val();
-                if(feedback.length>250){
-                    $('#feedback-limit').css('display','block');
-                    feedbackV = false;
-                    make(emailV,feedbackV,nameV);
-                }
-                else{
-                    $('#feedback-limit').css('display','none');
-                    feedbackV = true;
-                    make(emailV,feedbackV,nameV);
-                }
-
-                if(feeback==null || feedback==""){
-                    $('#feedback-mandatory').css('display','block');
-                    feedbackV = false;
-                    make(emailV,feedbackV,nameV);
-                }
-                else{
-                    $('#feedback-mandatory').css('display','none');
-                    feedbackV = true;
-                    make(emailV,feedbackV,nameV);
-                }
-            });
-
-            $('#fname').keyup(function(){
-                let name = $('#fname').val();
-                if(name==null){
-                    $('name-mandatory').css('display','block');
-                    nameV = false;
-                    make(emailV,feedbackV,nameV);
-                }
-                else{
-                    $('name-mandatory').css('display','none');
-                    feedbackV = true;
-                    make(nameV,feedbackV,nameV);
-                }
-            });
-
-
-            
-
+    <?php if($success){?>
+        <script>
+            alert("Thanks for you feedback!");
+        </script>
+    <?php }?>
+    <script>
         
-        });
-
-
-        function make(nameV,feedbackV,nameV){
-            alert(123);
-            if(nameV && feedbackV && nameV){
-                $('.button').prop('disabled', false);
-            }
-            else{
-                $('.button').prop('disabled', true);
-            }
-        }
-
-    </script> -->
+    </script>
 
     <title>Testimonial Form</title>
 </head>
